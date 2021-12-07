@@ -13,13 +13,13 @@ export default function Navbar() {
         <HStack spacing='50px' mt='50px'>
 
             <Link to='/'>
-                <Heading>About</Heading>
+                <Heading>ABOUT</Heading>
             </Link>
             <Link to='/projects'>
-                <Heading>Projects</Heading>
+                <Heading>PROJECTS</Heading>
             </Link>
             <Link to='/contact'>
-                <Heading>Contact</Heading>
+                <Heading>CONTACT</Heading>
             </Link>
 
         </HStack>
