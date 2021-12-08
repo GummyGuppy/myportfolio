@@ -10,16 +10,13 @@ export default function Navbar() {
     return (
         
         <Center>
-        <HStack spacing='50px' mt='50px'>
+        <HStack spacing='150px' mt='50px' mb='50px'>
 
             <Link to='/'>
                 <Heading>ABOUT</Heading>
             </Link>
             <Link to='/projects'>
                 <Heading>PROJECTS</Heading>
-            </Link>
-            <Link to='/contact'>
-                <Heading>CONTACT</Heading>
             </Link>
 
         </HStack>

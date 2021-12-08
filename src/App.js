@@ -2,9 +2,9 @@
 import Navbar from './components/Navbar';
 import About from './components/About';
 import Projects from './components/Projects';
-import Contact from './components/Contact';
 
 //chakra imports
+import {Progress} from '@chakra-ui/react'
 
 //router imports
 import {
@@ -23,12 +23,13 @@ function App() {
 
         
           <Navbar/>
+          
+          <Progress size='sm' w='100%'/>
 
 
       <Routes>
         <Route exact path='/' element={<About/>}/>
         <Route exact path='/projects' element={<Projects/>}/>
-        <Route exact path='/contact' element={<Contact/>}/>
       </Routes>
 
       </Router>
