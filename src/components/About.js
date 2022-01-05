@@ -1,66 +1,94 @@
-//chakra imports
-import {VStack, HStack, Text, Avatar, Progress, Heading} from '@chakra-ui/react'
+import React from 'react'
 
-//icon imports
-import {SiChakraui, SiReact, SiAmazonaws, SiNodedotjs} from 'react-icons/si'
-import{FaGithubSquare, FaLinkedin, FaMedium} from 'react-icons/fa'
+import { HStack, Heading, Text, Stack, Progress, VStack, Icon, Divider, Center} from '@chakra-ui/react'
+
+import { FaAws } from "react-icons/fa"
+import { GrGraphQl } from "react-icons/gr"
+import {SiRubyonrails, SiApollographql, SiFirebase, SiAuth0, SiNextdotjs} from 'react-icons/si'
+import {BsTools} from 'react-icons/bs'
+
+import { GrCertificate } from "react-icons/gr";
 
 export default function About() {
-    return (
+
+
+
+
+    function Skill({ title, desc, icon, iconHex, progressValue, ...rest }) {
+        return (
+        
+            <HStack  p={5} shadow='md' borderWidth='2px' w='25vw' h='100px' 
+                    align='center' justify='space-between' {...rest}>  
+                <Icon as={icon} color={iconHex} h='100px' w='100px'/>
+                <VStack>
+                  <Heading size='md'>{title}</Heading>
+                  <Text align='endcd'>{desc}</Text>
+                  {progressValue ? <Progress value={progressValue} isAnimated='true' hasStripe='true' w='100%' /> : null}
+                </VStack>
+            </HStack>
+
+        )
+      }
+      
+      function Skills() {
+        return (
 
         
+          <VStack spacing={4} p={16}>
+
+            <Skill title="NextJS" icon={SiNextdotjs} iconHex='black'
+            desc='My primary framework for front end development'/>
+            <Skill title="Auth0" icon={SiAuth0} iconHex='red'
+            desc='Authorization, role monitoring and protected routes'/>
+            <Skill title="Firebase" icon={SiFirebase} iconHex='orange'
+            desc='Used for quick access to a cloud database via Firestore'/>
+            <Skill title="Apollo" icon={SiApollographql}
+            desc='API data retrieval tool'/>
+
+            
+          </VStack>
+        )
+      }
+
+        function Certifications(){
+          return (
 
             <VStack>
+              <Heading size='sm'>Associate:</Heading>
+              <Skill title='Certified Solution Architect' icon={FaAws} iconHex='orange' progressValue={20}/>
+              <Skill title='Certified Developer' icon={FaAws} iconHex='orange' progressValue={10}/>
 
-                
-                <HStack w='90%' mt='50px' mb='50px'>
-
-                    <VStack boxShadow='outline'>
-                        <Avatar size='2x1'/>
-                        <HStack>
-                            <FaMedium size='50px'/>
-                            <FaGithubSquare size='50px'/>
-                            <FaLinkedin size='50px'/>
-                        </HStack>
-                    </VStack>
-                    <Text padding='25px'>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                     when an unknown printer took a galley of type and scrambled it to make a type 
-                     specimen book. It has survived not only five centuries, but also the leap into 
-                     electronic typesetting, remaining essentially unchanged. It was popularised in the 
-                     1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more 
-                     recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                    </Text>
-                    
-
-                </HStack>
-                
-                    
-                <Progress size='sm' w='100%'/>
-                <VStack >
-                    
-                
-
-                <HStack spacing='50px' mt='50px' mb='50px' justify='flex-start'>
-                        
-
-                    <SiReact size='150px' color='#61DBFB' />
-                    <Heading size='xl'>/</Heading>
-                    <SiChakraui size='150px' color='#1fcecb'/>
-                    <Heading size='xl'>/</Heading>
-                    <SiAmazonaws size='150px' color='#FF9900'/>
-                    <Heading size='xl'>/</Heading>
-                    <SiNodedotjs size='150px' color='gray'/>
-                    
-
-                </HStack>
-
-                
-                </VStack>
-                
             </VStack>
 
-        
-    )
+          )
+        }
+
+
+return (
+    
+    <>
+    <Stack spacing='100px' direction={['column', 'column', 'row', 'row']} justify='center' p={6}>
+        <VStack justify='center' align='center'>
+            <Heading p={6} size='lg'>Tools I use:</Heading>
+            <BsTools size={'15vw'} color='gray' />
+        </VStack>
+        <Skills/>
+    </Stack>
+    <Center>
+    <Divider w='75vw'/>
+    </Center>
+    
+    <Stack spacing='100px' direction={['column', 'column', 'row', 'row']} justify='center' p={6}>
+        <VStack justify='center' align='center'>
+            <Heading p={6} size='lg'>Certifications</Heading>
+            <GrCertificate size={'15vw'}/>
+        </VStack>
+        <Certifications/>
+    </Stack>
+    </>
+    
+
+
+
+)
 }

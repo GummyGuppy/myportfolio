@@ -1,41 +1,44 @@
-//page imports
+import React from 'react'
+
+
+//Components
 import Navbar from './components/Navbar';
 import About from './components/About';
-import Projects from './components/Projects';
+import Projects from './components/Projects'
+import Contact from './components/Contact'
 
-//chakra imports
-import {Progress} from '@chakra-ui/react'
-
-//router imports
+//React Router imports
 import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom";
-
+    //Browser Router imported and implemented at index.js level
+    Routes,
+    Route
+  } from "react-router-dom";
 
 function App() {
-  return (
-    
-  
-      <>
-      <Router>
+
+
+return(
+        <>
+
+        <Navbar/>
+        <Routes>
+            <Route index element={<About/>}/>
+            <Route path='/projects' element={<Projects/>}/>
+            <Route path='/contact' element={<Contact/>}/>
+        </Routes>
 
         
-          <Navbar/>
-          
-          <Progress size='sm' w='100%'/>
 
 
-      <Routes>
-        <Route exact path='/' element={<About/>}/>
-        <Route exact path='/projects' element={<Projects/>}/>
-      </Routes>
+        
+        </>
 
-      </Router>
-      
-      </>
-  )
+)
+
+
+
+
+  
 }
 
 export default App;
