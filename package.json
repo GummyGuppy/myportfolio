@@ -45,7 +45,7 @@
   "main": "index.js",
   "devDependencies": {},
   "repository": {
-    "type": "git",
+    "type": "",
     "url": "git+https://github.com/GummyGuppy/myportfolio.git"
   },
   "author": "Earl Born",
@@ -53,5 +53,5 @@
   "bugs": {
     "url": "https://github.com/GummyGuppy/myportfolio/issues"
   },
-  "homepage": "https://github.com/GummyGuppy/myportfolio#readme"
+  "homepage": "https://localhost:3000"
 }

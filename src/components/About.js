@@ -2,9 +2,9 @@ import React from 'react'
 
 import { HStack, Heading, Text, Stack, Progress, VStack, Icon, Divider, Center} from '@chakra-ui/react'
 
-import { FaAws } from "react-icons/fa"
+import { FaAws, FaPhoenixFramework } from "react-icons/fa"
 import { GrGraphQl } from "react-icons/gr"
-import {SiRubyonrails, SiApollographql, SiFirebase, SiAuth0, SiNextdotjs} from 'react-icons/si'
+import {SiApollographql, SiFirebase, SiElixir, SiReact, SiJava} from 'react-icons/si'
 import {BsTools} from 'react-icons/bs'
 
 import { GrCertificate } from "react-icons/gr";
@@ -13,11 +13,11 @@ export default function About() {
 
 
 
-
+  // Abstraction
     function Skill({ title, desc, icon, iconHex, progressValue, ...rest }) {
         return (
         
-            <HStack  p={5} shadow='md' borderWidth='2px' w='25vw' h='100px' 
+            <HStack  p={5} shadow='md' borderWidth='2px' w='25vw' 
                     align='center' justify='space-between' {...rest}>  
                 <Icon as={icon} color={iconHex} h='100px' w='100px'/>
                 <VStack>
@@ -30,20 +30,24 @@ export default function About() {
         )
       }
       
+      //Implementation
       function Skills() {
         return (
 
         
           <VStack spacing={4} p={16}>
 
-            <Skill title="NextJS" icon={SiNextdotjs} iconHex='black'
+            <Skill title="Java" icon={SiJava} iconHex={"red"} desc="Understanding of basic OOP principles and implementation."/>
+            <Skill title="NextJS" icon={SiReact} iconHex='#61DBFB'
             desc='My primary framework for front end development'/>
-            <Skill title="Auth0" icon={SiAuth0} iconHex='red'
-            desc='Authorization, role monitoring and protected routes'/>
             <Skill title="Firebase" icon={SiFirebase} iconHex='orange'
-            desc='Used for quick access to a cloud database via Firestore'/>
+            desc='Cloud database and authentication resource'/>
             <Skill title="Apollo" icon={SiApollographql}
             desc='API data retrieval tool'/>
+            <Skill title="Elixir" icon={SiElixir} iconHex={"purple"} desc='Develop solid Elixir fundamentals' 
+            progressValue={20}/>
+            <Skill title="Phoenix" icon={FaPhoenixFramework} iconHex={"orange"} desc='Build Liveview CRUD application' 
+            progressValue={15}/>
 
             
           </VStack>
@@ -67,9 +71,18 @@ export default function About() {
 return (
     
     <>
+
+<VStack justify="center" bg='tomato'>
+<Heading>Current portfolio todos:</Heading>
+      <Text>make mobile friendly</Text>
+      <Text>compact skillset/stack descriptions</Text>
+</VStack>
+
+
+
     <Stack spacing='100px' direction={['column', 'column', 'row', 'row']} justify='center' p={6}>
         <VStack justify='center' align='center'>
-            <Heading p={6} size='lg'>Tools I use:</Heading>
+            <Heading p={6} size='lg'>Tools I'm familiar with: </Heading>
             <BsTools size={'15vw'} color='gray' />
         </VStack>
         <Skills/>
